@@ -59,11 +59,12 @@
 						<li><b>Value error</b>: A quantitative data value is incorrect. </li>
 						<li><b>Label error</b>: A non-antitative data value is incorrect. </li>
 						<li><b>Trend error</b>: The direction of a trend is wrong. </li>
+						<li><b>Magnitude error</b>: The manitude or variance of a trend is wrong. </li>
 						<li><b>Out-of-context error</b>: The caption introduces concepts that are not present in the chart. </li>
 						<!-- <li><b>Entity error</b>: The primary arguments (or their attributes) of the predicate are wrong. </li>
 						<li><b>Predicate error</b>: The predicate in a caption is inconsistent with the chart. </li> -->
 						<li><b>Grammatical error</b>: The grammar of the caption is wrong. </li>
-						<li><b>Lack-of-context error</b>: The caption misses important information to understand the chart. </li>
+						<!-- <li><b>Lack-of-context error</b>: The caption misses important information to understand the chart. </li> -->
 					</ul>
 					<div class="card">
 						<div class="card-header bg-info text-white">
@@ -133,6 +134,26 @@
 								<div class="column col-12"><b>Correct Caption</b></div>
 
 								<div class="column col-12">From 1980-2008, the multiple-victim homicide rate is <span style="color:green;">increasing</span> overall.</div>
+
+							</div>
+						</div>
+
+
+						<div class="card-header bg-info text-white">
+							Magnitude Error Examples
+						</div>
+						<div class="card-body" id="exampleBody2">
+							<div class="columns cardstyle-section" style="padding-bottom: 30px;">
+								
+								<div class="column col-12"><b>Generated Caption</b></div>
+
+								<div class="column col-12">From 1980-2008, the multiple-victim homicide rate is <span style="color:red;">sharply</span> increasing overall.</div>
+
+								<br>
+								
+								<div class="column col-12"><b>Correct Caption</b></div>
+
+								<div class="column col-12">From 1980-2008, the multiple-victim homicide rate is <span style="color:green;">fluctuatingly</span> increasing overall.</div>
 
 							</div>
 						</div>
@@ -223,10 +244,10 @@
 
 
 			<div class="col-md-6">
-				<h4>Generated Summaries</h4>
+				<h4>Generated Captions</h4>
 				<div class="col-md-12" style="overflow:scroll; height:500px;">
 					<section class="card card-block">
-	                    <h5>Summary </h5>
+	                    <h5>Caption </h5>
 	                    <div class="card card-block"
 	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;">${summ_1}</div>
 	                    <input name="sys_id_1" type="hidden" value="${sys_id_1}" />
@@ -253,6 +274,12 @@
 
 	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
 	                                <label class="btn btn-custom">
+	                                    <input type="checkbox" name="magnitude_error-1" autocomplete="off"> Magnitude Error
+	                                </label>
+	                            </div>
+
+	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+	                                <label class="btn btn-custom">
 	                                    <input type="checkbox" name="ooc_error-1" autocomplete="off"> Out-of-context Error
 	                                </label>
 	                            </div>
@@ -272,11 +299,11 @@
 	                                    <input type="checkbox" name="grammatical_error-1" autocomplete="off"> Grammatical Error
 	                                </label>
 	                            </div>
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+	                            <!-- <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
 	                                <label class="btn btn-custom">
 	                                    <input type="checkbox" name="loc_error-1" autocomplete="off"> Lack-of-context Error
 	                                </label>
-	                            </div>
+	                            </div> -->
 	                        </div>
 	                    </div>
 	                </section>
