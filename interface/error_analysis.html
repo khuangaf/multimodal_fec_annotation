@@ -225,7 +225,15 @@
 	<button class="btn btn-primary m-3" type="button" data-toggle="collapse" data-target="#collapseTrigger">
 		Hide/Show Instructions
 	</button>
-
+	<script>
+		function set_hidden(input_txt, set_id) {
+			if (input_txt == "BLANK") {
+				document.getElementById(set_id).hidden = true;
+				
+			}
+		}
+        
+	</script>
 	<!-- <div class="crowd-form"> -->
 	<crowd-form>
 		<div class="row">
@@ -249,63 +257,548 @@
 					<section class="card card-block">
 	                    <h5>Caption </h5>
 	                    <div class="card card-block"
-	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;">${summ_1}</div>
-	                    <input name="sys_id_1" type="hidden" value="${sys_id_1}" />
-	                    <div class="col-md-12 form-group">
-	                        <div class="row">
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_1_block">
+	                        ${summ_1_sent_1} 
 
-	                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="value_error-1" autocomplete="off"> Value Error
-	                                </label>
-	                            </div>
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
 
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="label_error-1"  autocomplete="off"> Label Error
-	                                </label>
-	                            </div>
-	                            
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="trend_error-1" autocomplete="off"> Trend Error
-	                                </label>
-	                            </div>
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
 
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="magnitude_error-1" autocomplete="off"> Magnitude Error
-	                                </label>
-	                            </div>
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_1" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
 
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="ooc_error-1" autocomplete="off"> Out-of-context Error
-	                                </label>
-	                            </div>
-	                            <!-- <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="entity_error-1" autocomplete="off"> Entity Error
-	                                </label>
-	                            </div>
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="entity_error-1" autocomplete="off"> Predicate Error
-	                                </label>
-	                            </div> -->
-	                            
-	                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="grammatical_error-1" autocomplete="off"> Grammatical Error
-	                                </label>
-	                            </div>
-	                            <!-- <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
-	                                <label class="btn btn-custom">
-	                                    <input type="checkbox" name="loc_error-1" autocomplete="off"> Lack-of-context Error
-	                                </label>
-	                            </div> -->
-	                        </div>
-	                    </div>
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_1"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_1" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_1" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_1" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_1" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_1}", "summ_1_sent_1_block")
+                        </script>
+
+
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_2_block">
+	                        ${summ_1_sent_2} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_2" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_2"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_2" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_2" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_2" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_2" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_2}", "summ_1_sent_2_block")
+                        </script>
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_3_block">
+	                        ${summ_1_sent_3} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_3" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_3"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_3" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_3" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_3" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_3" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_3}", "summ_1_sent_3_block")
+                        </script>
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_4_block">
+	                        ${summ_1_sent_4} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_4" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_4"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_4" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_4" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_4" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_4" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_4}", "summ_1_sent_4_block")
+                        </script>
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_5_block">
+	                        ${summ_1_sent_5} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_5" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_5"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_5" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_5" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_5" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_5" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_5}", "summ_1_sent_5_block")
+                        </script>
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_6_block">
+	                        ${summ_1_sent_6} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_6" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_6"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_6" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_6" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_6" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_6" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_6}", "summ_1_sent_6_block")
+                        </script>
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_7_block">
+	                        ${summ_1_sent_7} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_7" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_7"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_7" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_7" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_7" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_7" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_7}", "summ_1_sent_7_block")
+                        </script>
+
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_8_block">
+	                        ${summ_1_sent_8} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_8" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_8"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_8" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_8" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_8" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_8" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_8}", "summ_1_sent_8_block")
+                        </script>
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_9_block">
+	                        ${summ_1_sent_9} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_9" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_9"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_9" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_9" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_9" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_9" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_9}", "summ_1_sent_9_block")
+                        </script>
+
+
+
+
+                        <div class="card card-block"
+	                        style="margin-bottom: 1em; text-align: justify; text-justify: inter-word;" id="summ_1_sent_10_block">
+	                        ${summ_1_sent_10} 
+
+	                    	<input name="sys_id_1" type="hidden" value="${sys_id_1}" />
+
+		                    <div class="col-md-12 form-group">
+		                        <div class="row">
+
+		                        	<div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="value_error-summ_1-sent_10" autocomplete="off"> Value Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="label_error-summ_1-sent_10"  autocomplete="off"> Label Error
+		                                </label>
+		                            </div>
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="trend_error-summ_1-sent_10" autocomplete="off"> Trend Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="magnitude_error-summ_1-sent_10" autocomplete="off"> Magnitude Error
+		                                </label>
+		                            </div>
+
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="ooc_error-summ_1-sent_10" autocomplete="off"> Out-of-context Error
+		                                </label>
+		                            </div>
+		                            
+		                            
+		                            <div class="col-md-3 btn-group btn-group-toggle" data-toggle="buttons">
+		                                <label class="btn btn-custom">
+		                                    <input type="checkbox" name="grammatical_error-summ_1-sent_10" autocomplete="off"> Grammatical Error
+		                                </label>
+		                            </div>
+		                            
+		                        </div>
+		                    </div>
+		                </div>
+		                <script>
+                            set_hidden("${summ_1_sent_10}", "summ_1_sent_10_block")
+                        </script>
+
 	                </section>
 
 				</div> <!-- End of form column -->
